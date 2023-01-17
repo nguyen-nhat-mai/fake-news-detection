@@ -15,10 +15,13 @@ The text from title, text, subject were combined and processed as followed:
 5. Remove stopwords
 
 Below is the snapshot of data after processing:
+
 ![image](https://user-images.githubusercontent.com/85484281/212895836-c78b4fb1-828f-4ef6-a43e-a1a299269ea1.png)
 The distribution of fake and real news are balanced, thus requiring no further adjustment
+
 ![image](https://user-images.githubusercontent.com/85484281/212898337-e1b65609-c196-4f17-b456-35ca155ed292.png)
 Interestingly, "donald trump" appears frequently in both real and fake news. Fake news frequently include words such as "one", "said", "call" while "unit state", "white hous" are common in real news. (noted that the the word is a little bit different from the original word because of stemming)
+
 ![image](https://user-images.githubusercontent.com/85484281/212899123-6cbc7fb5-c90c-44e0-ad78-f9f9885b2788.png)
 ![image](https://user-images.githubusercontent.com/85484281/212899162-4fab42da-46ef-473e-8244-43eb8b17cf2d.png)
 

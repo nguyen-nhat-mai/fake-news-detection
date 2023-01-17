@@ -32,7 +32,7 @@ Traditional ML classification models were imported from scikit-learn:
 3. Logistics regression
 4. Decision tree
 
-The default models are tried first, then the hyperparameters are tuned to improve the performances
+The default models are tried first, then the hyperparameters are tuned to improve the performances. Cross-validation 5-fold was also used to prevent overfitting.
 ### 3. Evaluation
 [Accuracy score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html) = # matches/ # sample
 

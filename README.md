@@ -3,7 +3,7 @@ This project was done as part of the Machine Learning course at CentraleSupelec.
 
 ## Project description
 The task was to employ traditional machine learning (ML) classification methods to mine the text and identify unreliable news. The [dataset](https://www.kaggle.com/competitions/fake-news/data?select=train.csv) comprises 26,000 rows representing fake and reliable news. For each news, article title, text,
-author and label are provided. ML methods used are Support vector machine (SVM), Naive bayes, Logistics regression, Knn, Decision tree. The performances of models were evaluated using accuracy score and running time. xx proved to outperform in this case with xx accuracy score while xx running time.
+author and label are provided. ML methods used are Support vector machine (SVM), Naive bayes, Logistics regression, Knn, Decision tree. The performances of models were evaluated using accuracy score and running time. Naive Bayes proved to outperform in this case with 84% accuracy score with the least running time (0.11 seconds).
 
 ## Methodology
 ### 1. Pre-processing and explore data
@@ -36,18 +36,10 @@ Interestingly, "trump" appears frequently in true news while "hilarri clinton" a
 The combined text, finally, are vectorized using [TF-IDF](https://www.capitalone.com/tech/machine-learning/understanding-tf-idf/)
 
 ### 2. Modelling & evaluation metrics:
-Traditional ML classification models were imported from scikit-learn:
-- SVM
-- Naive Bayes
-- Knn
-- Logistics regression
-- Decision tree
-
-The default models are tried first, then the hyperparameters are tuned to improve the performances. Cross-validation 5-fold was also used to prevent overfitting. For evaluation, following metrics are used:
+Traditional ML classification models were imported from scikit-learn: SVM, Naive Bayes, Knn, Logistics regression, Decision tree. The default models are tried first, then the hyperparameters are tuned to improve the performances. Cross-validation 5-fold was also used to prevent overfitting. For evaluation, following metrics are used:
 
 - [Accuracy score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html) = # matches/ # sample
 - [Running time](https://docs.python.org/3/library/time.html) = time from fitting data into the model until finishing predicting the outcomes
-- [AUC](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc) = probability that the model ranks a random 1 example more highly than a random 0 example
 
 ## Findings and some comments
 ### 1. Findings

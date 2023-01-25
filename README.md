@@ -6,7 +6,7 @@ The task was to employ traditional machine learning (ML) classification methods 
 author and label are provided. ML methods used are Support vector machine (SVM), Naive bayes, Logistics regression, Knn, Decision tree. The performances of models were evaluated using accuracy score and running time. Naive Bayes proved to outperform in this case with 84% accuracy score with the least running time (0.11 seconds).
 
 ## Methodology
-### 1. Pre-processing and explore data
+#### 1. Pre-processing and explore data
 2 issues were found in this dataset:
 - Null values exist in title, author & text. Since there is no row with null values for all 3 columns, combing words from 3 columns is still valid for text analysis.
 
@@ -35,25 +35,23 @@ Interestingly, "trump" appears frequently in true news while "hilarri clinton" a
 
 The combined text, finally, are vectorized using [TF-IDF](https://www.capitalone.com/tech/machine-learning/understanding-tf-idf/)
 
-### 2. Modelling & evaluation metrics:
+#### 2. Modelling & evaluation metrics:
 Traditional ML classification models were imported from scikit-learn: SVM, Naive Bayes, Knn, Logistics regression, Decision tree. The default models are tried first, then the hyperparameters are tuned to improve the performances. Cross-validation 5-fold was also used to prevent overfitting. For evaluation, following metrics are used:
 
 - [Accuracy score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html) = # matches/ # sample
 - [Running time](https://docs.python.org/3/library/time.html) = time from fitting data into the model until finishing predicting the outcomes
 
 ## Findings and some comments
-### 1. Findings
+#### 1. Findings
 Model xxx achieved the best accuracy score but model xxx consumed the least tiem to run
 => table
 
 Model xxx has the highest AUC
 => plot
-### 2. Limitations and suggetions
+#### 2. Limitations and suggetions
 As concluded, the training data does not represent the population, thus causing the model to learn wrong behaviors and yield inaccurate output on test data. Since the method to collect the data is not revealed, it is difficult to handle this problem. A suggestion to make this project more applicable is to webscrap data from the social media and newspapers.
 
-By vectorizing the text, huge dimensions (161,275 features in this case) can not be avoided. It is, therefore, difficult or impossible to run and tune hyper paramters of dimension-sensitive models such as SVM, Knn, Random forest, .... Techniques to reduce the dimension such as PCA & LDA could not be implemented because 1) the vectorized data are sparse matrix (mostly include 0) and 2) my computer memory (RAM) is limited
-
-
+By vectorizing the text, huge dimensions (161,275 features in this case) can not be avoided. It is, therefore, difficult or impossible to run and tune hyper paramters of dimension-sensitive models such as SVM, Knn, Decision Tree, .... Techniques to reduce the dimension such as PCA & LDA could not be implemented because 1) the vectorized data are sparse matrix (mostly include 0) and 2) my computer memory (RAM) is limited
 
 ## References
 https://medium.com/intel-analytics-software/from-hours-to-minutes-600x-faster-svm-647f904c31ae

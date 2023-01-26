@@ -25,7 +25,7 @@ Below is the snapshot of data after processing:
 
 ![image](https://user-images.githubusercontent.com/85484281/214839720-5a808184-a7ae-418f-9fd8-d054812a4592.png)
 
-The distribution of fake and real news are balanced, thus requiring no further adjustment. Interestingly, "trump" appears frequently in true news while "hilarri clinton" appears frequently in fake news. (noted that the the word is a little bit different from the original word because of stemming)
+The distribution of fake and real news are balanced, thus requiring no further adjustment. Interestingly, "mr trump" appears frequently in true news while "hillari clinton" appears frequently in fake news. (noted that the the word is a little bit different from the original word because of stemming)
 
 ![image](https://user-images.githubusercontent.com/85484281/214839441-b4b19b9a-31ff-4b30-823a-7e7a15ed8f66.png)
 
@@ -45,18 +45,22 @@ Bernoulli Naive Bayes achieved the best accuracy score with 84% accuracy score a
 
 ![image](https://user-images.githubusercontent.com/85484281/214859074-eee02fe1-ab3b-455d-92ea-5d86cd2b9e3b.png)
 
-Except for Naive Bayes, the accuracy scores are extremely high when models are trained on training dataset (91-100%) but drop significantly when applied upon the test dataset (58-64%) (noted that train-test set split is fixed following the rule of the Kaggle competition). The models are significantly overfitting and the training dataset seems to not representing the population well. As a result, the hyperparameters obtained after 5-fold cross-validating on training dataset are not valid as well. On such ground, I focused on adding regularization to prevent overfitting and managed to improve the performance of SVM (70%) and Logistics regression (70%)
+Except for Naive Bayes, the accuracy scores are extremely high when models are trained on training dataset (91-100%) but drop significantly when applied upon the test dataset (58-64%) (noted that train-test set split is fixed following the rule of the Kaggle competition so resplit does not work). The models are significantly overfitting and the training dataset seems to not representing the population well. As a result, the hyperparameters obtained after grid search and 5-fold cross-validating on training dataset are not valid as well. On such ground, I focused on adding regularization to prevent overfitting and managed to improve the performance of SVM (70%) and Logistics regression (70%)
 
 ![image](https://user-images.githubusercontent.com/85484281/214859621-5a755722-b8c8-4f03-a682-a5173572b4ea.png)
 
-This method, however, does not work for Knn & Decision tree.Training scores are closed to perfect (100%) while validation scores remain the same no matter how the parameters are set.
+This method, however, does not work for Knn & Decision tree. Training scores are closed to perfect (100%) while validation scores remain the same no matter how the parameters are set. This seems to be an out-of-domain problem. As mentioned, the training dataset is significantly different from the test dataset, creating the gap between train and test accuracy scores.
 
 ![image](https://user-images.githubusercontent.com/85484281/214862638-1317a7f3-c8e8-495e-8dec-326460e82de1.png)
 
-#### 2. Limitations and suggetions
-As concluded, the training data does not represent the population, thus causing the model to learn wrong behaviors and yield inaccurate output on test data. Since the method to collect the data is not revealed, it is difficult to handle this problem. A suggestion to make this project more applicable is to webscrap data from the social media and newspapers.
+On the contrary, Naive Bayes worked well in this case because 1) 
 
-By vectorizing the text, huge dimensions (161,275 features in this case) can not be avoided. It is, therefore, difficult or impossible to run and tune hyper paramters of dimension-sensitive models such as SVM, Knn, Decision Tree, .... Techniques to reduce the dimension such as PCA & LDA could not be implemented because 1) the vectorized data are sparse matrix (mostly include 0) and 2) my computer memory (RAM) is limited
+#### 2. Limitations
+As concluded, the training data do not represent the population, thus causing the model to learn the noises and yield inaccurate output on test data. One pissble solution is to collect more data. Since the method to collect the data is not revealed, it is difficult to handle this problem. Another suggestion is to webscrap data from the social media and newspapers. By doing so, the project is also more applicable.
+
+By vectorizing the text, huge dimensions (161,275 features in this case) can not be avoided. It is, therefore, difficult or impossible to run and tune hyperparamters of dimension-sensitive models such as SVM, Knn, Decision Tree, .... Techniques to reduce the dimension such as PCA & LDA could not be implemented because 1) the vectorized data are sparse matrix (mostly include 0) and 2) my computer memory (RAM) is limited
+
+This project can also be further improved using ensemble models (Random forest, XGBoost, etc.) or the state-of-the-art method in natural language processing context i.e. deep learning. I am starting on this and hope to share my work soon.
 
 ## References
 https://medium.com/intel-analytics-software/from-hours-to-minutes-600x-faster-svm-647f904c31ae

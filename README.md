@@ -68,7 +68,11 @@ This project can also be further improved using ensemble models (Random forest, 
 
 ## References
 https://medium.com/intel-analytics-software/from-hours-to-minutes-600x-faster-svm-647f904c31ae
+
 https://medium.com/@pushkarmandot/what-is-the-significance-of-c-value-in-support-vector-machine-28224e852c5a
-https://www.section.io/engineering-education/hyperparmeter-tuning/
-https://web.stanford.edu/~jurafsky/slp3/4.pdf
+
+https://www.section.io/engineering-education/hyperparmeter-tuning
+
 https://medium.com/analytics-vidhya/time-complexity-of-ml-models-4ec39fad2770
+
+https://web.stanford.edu/~jurafsky/slp3/4.pdf

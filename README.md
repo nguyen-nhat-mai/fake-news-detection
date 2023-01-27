@@ -53,7 +53,7 @@ This method, however, does not work for Knn & Decision tree. Training scores are
 
 ![image](https://user-images.githubusercontent.com/85484281/214862638-1317a7f3-c8e8-495e-8dec-326460e82de1.png)
 
-On the contrary, Naive Bayes worked well in this case because
+On the contrary, Naive Bayes seems to work well in this case because
 - the algorithm is highly biased under the assumption that all features are independent (be inflexible and can not capture complicated relationship), thus being immune to overfitting
 - very low complexity as only the probability of each class and the probability of each class given different input values need to be calculated
 
